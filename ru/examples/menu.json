@@ -1,30 +1,30 @@
 [
   {
-    "title": "Essentials",
+    "title": "Основа",
     "links": [
       { "name": "Hello world", "to": "" },
       { "name": "SEO HTML Head", "to": "/seo-html-head" }
     ]
   },
   {
-    "title": "Customization",
+    "title": "Кастомизация",
     "links": [
-      { "name": "Cached Components", "to": "/cached-components" },
-      { "name": "Custom Loading", "to": "/custom-loading" },
-      { "name": "Custom Routes", "to": "/custom-routes" },
-      { "name": "Global CSS", "to": "/global-css" },
-      { "name": "Layouts", "to": "/layouts" },
-      { "name": "Plugins", "to": "/plugins" },
-      { "name": "Routes transitions", "to": "/routes-transitions" }
+      { "name": "Кэш Компонентов", "to": "/cached-components" },
+      { "name": "Настройка Загрузки", "to": "/custom-loading" },
+      { "name": "Настройка Маршрутов", "to": "/custom-routes" },
+      { "name": "Глобальный CSS", "to": "/global-css" },
+      { "name": "Layouts (Разметка)", "to": "/layouts" },
+      { "name": "Плагины", "to": "/plugins" },
+      { "name": "Routes transitions (Переходы Маршрутов)", "to": "/routes-transitions" }
     ]
   },
   {
-    "title": "Advanced",
+    "title": "Продвинутый уровень",
     "links": [
-      { "name": "Async Datas", "to": "/async-datas" },
-      { "name": "Auth Routes", "to": "/auth-routes" },
-      { "name": "Vuex Store", "to": "/vuex-store" },
-      { "name": "Testing", "to": "/testing" }
+      { "name": "Асинхронные Данные", "to": "/async-datas" },
+      { "name": "Маршруты Аутентификации", "to": "/auth-routes" },
+      { "name": "Vuex Хранилище", "to": "/vuex-store" },
+      { "name": "Тестирование", "to": "/testing" }
     ]
   }
 ]
