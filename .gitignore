@@ -1,6 +1,7 @@
 # dependencies
 yarn.lock
 node_modules
+.idea
 
 # logs
 npm-debug.log
