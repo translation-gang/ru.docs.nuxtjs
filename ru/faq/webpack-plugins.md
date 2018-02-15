@@ -1,11 +1,11 @@
 ---
-title: webpack plugins
-description: How to add webpack plugins into my Nuxt.js application?
+title: webpack плагины
+description: Как добавить плагины в свое Nuxt.js приложение?
 ---
 
-# How to add webpack plugins?
+# Как добавить плагины для Webpack'а?
 
-In your `nuxt.config.js` file:
+В вашем `nuxt.config.js` файле добавьте:
 
 ```js
 const webpack = require('webpack')
@@ -16,7 +16,7 @@ module.exports = {
       new webpack.ProvidePlugin({
         '$': 'jquery',
         '_': 'lodash'
-        // ...etc.
+        // И т.д.
       })
     ]
   }
