@@ -1,26 +1,26 @@
 ---
-title: Caching Components
-description: How to cache components?
+title: Кэширование компонентов.
+description: Как кэшировать компоненты?
 ---
 
-# How to cache Vue components?
+# Как кэшировать Vue компоненты?
 
-> Although Vue's SSR is quite fast, it can't match the performance of pure string-based templating due to the cost of creating component instances and Virtual DOM nodes. In cases where SSR performance is critical, wisely leveraging caching strategies can greatly improve response time and reduce server load.
+> Несмотря на то, что серверный рендеринг в Vue достаточно быстрый, он не может сравниться с производительностью чистых строковых шаблонов из-за затрат на создание экземпляров компонента и виртуальных DOM узлов. В случаях, когда производительность серверного рендеринга критична, разумное использование стратегий кэширования может значительно улучшить время отклика и снизить нагрузку на сервер.
 
-To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) for Nuxt.js. This module uses vue-server-renderer to add LRU cache support for Vue components.
+Для избежания шаблонного кода, используйте [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) для Nuxt.js. Этот модуль использует vue-server-renderer для добавления поддержки LRU кэша для Vue компонентов.
 
-## Usage
+## Использование
 
-- Add `@nuxtjs/component-cache` dependency using Yarn or npm to your project
-- Add `@nuxtjs/component-cache` to `modules` section of `nuxt.config.js`
+- Добавьте зависимость `@nuxtjs/component-cache` используя Yarn или npm в ваш проект.
+- Добавьте `@nuxtjs/component-cache` в раздел `modules` внутри `nuxt.config.js`
 
 ```js
 {
   modules: [
-    // Simple usage
+    // Простое использование
     '@nuxtjs/component-cache',
 
-    // With options
+    // С опциями
     ['@nuxtjs/component-cache', {
       max: 10000,
       maxAge: 1000 * 60 * 60
@@ -29,11 +29,11 @@ To avoid boilerplate, use [Component Cache module](https://github.com/nuxt-commu
 }
 ```
 
-See [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) for more information.
+Смотрите [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) для подробной информации.
 
-## Don't forget, that
+## Не забывайте, что
 
-- Cache-able component **must define a unique `name` option**.
-- You should ***NOT*** cache components, that
-  - has child components that may rely on global state.
-  - has child components that produces side effects on the render `context`.
+- Кэшируемый компонент **обязан содержать уникальную опцию `name` компонента**.
+- Вы **НЕ** должны кэшировать компонент, если он
+  - Имеет дочерние компоненты, которые могут полагаться на глобальное состояние.
+  - Имеет дочерние компоненты, которые оказывают побочные эффекты (side effects) на `context` рендера.
