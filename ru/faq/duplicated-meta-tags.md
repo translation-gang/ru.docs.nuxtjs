@@ -1,9 +1,9 @@
 ---
-title: Повторяющиеся meta-теги
-description: Повторяются мета-теги в Nuxt.js?
+title: Дублирующиеся meta-теги
+description: Дублируются мета-теги в Nuxt.js?
 ---
 
-# Повторяющиеся meta-теги?
+# Дублирующиеся meta-теги?
 
 Это «особенность» плагина [vue-meta](https://github.com/declandewet/vue-meta), пожалуйста посмотрите [документацию элементов head](/guide/views#html-head).
 
@@ -26,6 +26,7 @@ description: Повторяются мета-теги в Nuxt.js?
 ```
 
 А затем на необходимой странице:
+
 ```js
 export default {
   head () {

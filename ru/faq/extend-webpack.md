@@ -10,7 +10,7 @@ description: Как расширить конфигурацию Webpack в мо�
 ```js
 module.exports = {
   build: {
-     extend (config, { dev, isClient }) {
+     extend (config, { isDev, isClient }) {
        // ...
      }
   }
