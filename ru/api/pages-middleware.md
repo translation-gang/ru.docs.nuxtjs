@@ -5,8 +5,8 @@ description: Устанавливает middleware для конкретной �
 
 # Свойство middleware
 
-- Type: `String` или `Array`
-  - Items: `String`
+- Тип: `String` или `Array`
+  - Содержимое: `String`
 
 Устанавливает middleware для конкретной страницы приложения.
 
@@ -37,4 +37,4 @@ export default function ({ store, redirect }) {
 }
 ```
 
-Чтобы узнать больше о middleware, смотрите [middleware документация](/guide/routing#middleware).
+Чтобы узнать больше о middleware, смотрите [middleware документацию](/guide/routing#middleware).
