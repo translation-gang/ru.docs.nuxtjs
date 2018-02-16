@@ -1,5 +1,5 @@
 ---
-title: webpack плагины
+title: Webpack плагины
 description: Как добавить плагины в свое Nuxt.js приложение?
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: Now Deployment
-description: How to deploy Nuxt.js app with Now?
+description: Как развернуть Nuxt.js приложение через Now.sh?
 ---
 
-# How to deploy with Now?
+# Развертывание с Now.sh
 
-To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is recommended:
+Чтобы развернуть с помощью [now.sh](https://zeit.co/now) в `package.json` рекомендуется следующее:
 
 ```json
 {
@@ -21,6 +21,6 @@ To deploy with [now.sh](https://zeit.co/now) a `package.json` like follows is re
 }
 ```
 
-Then run `now` and enjoy!
+Затем запустите команду `now` и наслаждайтесь!
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Заметка: мы рекомендуем добавить файл `.nuxt` в `.npmignore` или `.gitignore`.
