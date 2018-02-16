@@ -1,22 +1,22 @@
 ---
-title: "API: The middleware Property"
-description: Set the middleware for a specific page of the application.
+title: "API: Свойство middleware"
+description: Устанавливает middleware для конкретной страницы приложения.
 ---
 
-# The middleware Property
+# Свойство middleware
 
-- Type: `String` or `Array`
+- Type: `String` или `Array`
   - Items: `String`
 
-Set the middleware for a specific page of the application.
+Устанавливает middleware для конкретной страницы приложения.
 
-Example:
+Пример:
 
 `pages/secret.vue`:
 
 ```html
 <template>
-  <h1>Secret page</h1>
+  <h1>Секретная страница</h1>
 </template>
 
 <script>
@@ -30,11 +30,11 @@ export default {
 
 ```js
 export default function ({ store, redirect }) {
-  // If the user is not authenticated
+  // Если пользователь не аутентифицирован
   if (!store.state.authenticated) {
     return redirect('/login')
   }
 }
 ```
 
-To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+Чтобы узнать больше о middleware, смотрите [middleware документация](/guide/routing#middleware).
