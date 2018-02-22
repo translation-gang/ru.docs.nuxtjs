@@ -1,17 +1,17 @@
 ---
-title: "API: The asyncData Method"
-description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
+title: "API: Метод asyncData"
+description: Вы возможно хотите получить данные и отрендерить их на стороне сервера. Nuxt.js добавляет метод `asyncData`, который позволяет обрабатывать асинхронные операции до установления данных компонента.
 ---
 
-# The asyncData Method
+# Метод asyncData
 
-> You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method that lets you handle async operations before setting the component data.
+> Вы возможно хотите получить данные и отрендерить их на стороне сервера. Nuxt.js добавляет метод `asyncData`, который позволяет обрабатывать асинхронные операции до установления данных компонента.
 
-- **Type:** `Function`
+- **Тип:** `Function`
 
-`asyncData` is called every time before loading the component (**only for page components**). It can be called from the server-side or before navigating to the corresponding route. This method receives the [`context`](/api/context) object as the first argument, you can use it to fetch some data and return the component data.
+`asyncData` вызывается каждый раз до загрузки компонента (**только для компонентов страниц**). Он может быть вызван на стороне сервера или до перехода на соответствующий маршрут. Метод `fetch` получает [`контекст`](/api/context) первым аргументом. Вы также можете использовать этот метод для получения каких-либо данных и возвращать данные компонента.
 
-The result from asyncData will be **merged** with data.
+Результат из asyncData будет подмешиваться к данным.
 
 ```js
 export default {
@@ -24,4 +24,4 @@ export default {
 }
 ```
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">Вы не имеете доступа к экземпляру компонента через `this` внутри `asyncData`, потому что он будет вызван **до инициализации** компонента</div>
