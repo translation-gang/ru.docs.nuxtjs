@@ -1,23 +1,23 @@
 ---
-title: "API: The fetch Method"
-description: The `fetch` method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
+title: "API: Метод fetch"
+description: Метод `fetch` используется для заполнения хранилища до рендеринга страницы. Он работает аналогично `asyncData` методу, за исключением того, что не устанавливает data в компоненте.
 ---
 
-# The fetch Method
+# Метод fetch
 
-> The fetch method is used to fill the store before rendering the page, it's like the `asyncData` method except it doesn't set the component data.
+> Метод `fetch` используется для заполнения хранилища до рендеринга страницы. Он работает аналогично `asyncData` методу, за исключением того, что не устанавливает data в компоненте.
 
-- **Type:** `Function`
+- **Тип:** `Function`
 
-The `fetch` method, *if set*, is called every time before loading the component (**only for page components**). It can be called from the server-side or before navigating to the corresponding route.
+Метод `fetch`, *если установлен*, вызывается каждый раз до загрузки компонента (**только для компонент страницы**). Он может быть вызван на стороне сервера или до перехода на соответствующий путь.
 
-The `fetch` method receives [the `context`](/api/context) object as the first argument, we can use it to fetch some data and fill the store. To make the `fetch` method asynchronous, **return a Promise**, nuxt.js will wait for the promise to be resolved before rendering the component.
+Метод `fetch` получает [`context`](/api/context) объект как первый аргумент, мы также можем это использовать, чтобы получить какие-то данные и заполнить хранилище. Сделав `fetch` метод асинхронным, **возвращать Promise**, nuxt.js будет ждать, пока метод не будет выполнен полностью до рендеринга компонента.
 
-Example of `pages/index.vue`:
+Пример `pages/index.vue`:
 
 ```html
 <template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
+  <h1>Звёзды: {{ $store.state.stars }}</h1>
 </template>
 
 <script>
@@ -32,11 +32,11 @@ export default {
 </script>
 ```
 
-You can also use `async`/`await` to make your code cleaner:
+Вы также можете использовать `async`/`await`, чтобы сделать Ваш код чище:
 
 ```html
 <template>
-  <h1>Stars: {{ $store.state.stars }}</h1>
+  <h1>Звёзды: {{ $store.state.stars }}</h1>
 </template>
 
 <script>
@@ -51,7 +51,7 @@ export default {
 
 ## Vuex
 
-If you want to call a store action, use `store.dispatch` inside `fetch`, make sure to wait for the end of the action by using `async`/`await` inside:
+Если вы хотите вызывать действия хранилища, то используйте `store.dispatch` внутри `fetch`, не забудь дождаться конца действия, используя `async`/`await`:
 
 ```html
 <script>
