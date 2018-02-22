@@ -1,17 +1,17 @@
 ---
-title: "API: The head Method"
-description: Nuxt.js uses vue-meta to update the headers and HTML attributes of your application.
+title: "API: Метод head"
+description: Nuxt.js использует vue-meta для обновления заголовков и HTML атрибутов вашего приложения.
 ---
 
-# The head Method
+# Метод head
 
-> Nuxt.js uses [vue-meta](https://github.com/declandewet/vue-meta) to update the `headers` and `html attributes` of your application.
+> Nuxt.js использует [vue-meta](https://github.com/declandewet/vue-meta) для обновления `заголовков` и `HTML атрибутов` вашего приложения.
 
-- **Type:** `Object` or `Function`
+- **Тип:** `Object` или `Function`
 
-Use the `head` method to set the HTML Head tags for the current page.
+Используйте метод `head`, чтобы установить HTML Head теги для текущей страницы.
 
-Your component data are available with `this` in the `head` method, you can use set custom meta tags with the page data.
+Ваши данные в компоненте доступны через `this` в методе `head`. Вы можете использовать данные страницы для установления пользовательских мета тегов.
 
 ```html
 <template>
@@ -37,4 +37,4 @@ export default {
 </script>
 ```
 
-<p class="Alert">To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
+<p class="Alert">Для того, чтобы избежать дубликатов в компонентах потомках, пожалуйста устанавливайте уникальный идентификатор через ключ `hid`. [Подробно прочитать об этом](https://github.com/declandewet/vue-meta#lists-of-tags).</p>
