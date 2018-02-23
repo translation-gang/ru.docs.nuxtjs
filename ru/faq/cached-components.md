@@ -7,7 +7,7 @@ description: Как кэшировать компоненты?
 
 > Несмотря на то, что серверный рендеринг в Vue достаточно быстрый, он не может сравниться с производительностью чистых строковых шаблонов из-за затрат на создание экземпляров компонента и виртуальных DOM узлов. В случаях, когда производительность серверного рендеринга критична, разумное использование стратегий кэширования может значительно улучшить время отклика и снизить нагрузку на сервер.
 
-Для избежания шаблонного кода, используйте модуль [Component Cache module](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) для Nuxt.js. Этот модуль использует vue-server-renderer для добавления поддержки LRU кэша для Vue компонентов.
+Для избежания шаблонного кода, используйте модуль [Component Cache](https://github.com/nuxt-community/modules/tree/master/packages/component-cache) для Nuxt.js. Этот модуль использует vue-server-renderer для добавления поддержки LRU кэша для Vue компонентов.
 
 ## Использование
 
@@ -29,7 +29,7 @@ description: Как кэшировать компоненты?
 }
 ```
 
-Смотрите [component-level caching](http://ssr.vuejs.org/en/caching.html#component-level-caching) для подробной информации.
+Смотрите [component-level caching](https://ssr.vuejs.org/ru/caching.html#component-level-caching) для подробной информации.
 
 ## Не забывайте, что
 
