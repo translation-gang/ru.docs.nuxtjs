@@ -29,7 +29,7 @@ description: Как кэшировать компоненты?
 }
 ```
 
-Смотрите [component-level caching](https://ssr.vuejs.org/ru/caching.html#component-level-caching) для подробной информации.
+Смотрите [Кэширование на уровне страниц](https://ssr.vuejs.org/ru/caching.html#component-level-caching) для подробной информации.
 
 ## Не забывайте, что
 
