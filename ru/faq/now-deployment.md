@@ -1,5 +1,5 @@
 ---
-title: Now Deployment
+title: Публикация через сервис Now
 description: Как развернуть Nuxt.js приложение через Now.sh?
 ---
 
