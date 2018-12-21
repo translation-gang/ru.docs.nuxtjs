@@ -1,40 +1,40 @@
 ---
-title: "API: The validate Method"
-description: Nuxt.js lets you define a validator method inside your dynamic route component.
+title: "API: Метод validate"
+description: Nuxt.js позволяет определить метод валидации в вашем динамическом компоненте
 ---
 
-# The validate Method
+# Метод validate
 
-> Nuxt.js lets you define a validator method inside your dynamic route component.
+> Nuxt.js позволяет определить метод валидации в вашем динамическом компоненте
 
 - **Type:** `Function`
 
 ```js
 validate({ params, query, store }) {
-  return true // if the params are valid
-  return false // will stop Nuxt.js to render the route and display the error page
+  return true // Ничего не произойдет
+  return false // Остановит рендер и покажет страницу ошибки 404
 }
 ```
 
-Nuxt.js lets you define a validator method inside your dynamic route component (In this example: `pages/users/_id.vue`).
+Рассмотрим на примере: `pages/users/_id.vue`.
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+Если метод не вернет `true`, Nuxt.js автоматически покажет страницу с ошибкой 404
 
 ```js
 export default {
   validate ({ params }) {
-    // Must be a number
+    // Должно быть цифрой
     return /^\d+$/.test(params.id)
   }
 }
 ```
 
-You can also check some data in your [store](/guide/vuex-store) for example (filled by [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action) before action):
+Пример того что вы также можете использовать данные из [хранилища состояния](/guide/vuex-store) предварительно заполненное в [`nuxtServerInit`](/guide/vuex-store#the-nuxtserverinit-action)):
 
 ```js
 export default {
   validate ({ params, store }) {
-    // Check if `params.id` is an existing category
+    // Проверяем что `params.id` является существующей категорией
     return store.state.categories.some((category) => category.id === params.id)
   }
 }

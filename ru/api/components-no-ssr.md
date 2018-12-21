@@ -1,15 +1,15 @@
 ---
-title: "API: The <no-ssr> Component"
-description: Skip component rendering on server side(rendering), and display placeholder text.
+title: "API: Компонент <no-ssr>"
+description: Пропускает создание компонента на стороне сервера
 ---
 
-# The &lt;no-ssr&gt; Component
+# Компонент &lt;no-ssr&gt;
 
-> This component is used to purposely remove the component from the subject of server side rendering.
+> Это компонент используется для намеренного удаления из рендеринга на стороне сервера
 
 **Props**:
 - placeholder: `string`
-  - This prop will be used as a content of inner `div` and displayed as text only on server side rendering.
+  - То что вы напишите в этом пропсе будет отображаться в момент рендера на стороне сервере вместо обернутого компонента
 
 ```html
 <template>
@@ -22,4 +22,4 @@ description: Skip component rendering on server side(rendering), and display pla
 </template>
 ```
 
-This component is a clone of [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Thanks [@egoist](https://github.com/egoist)!
+Этот компонент является клоном [egoist/vue-no-ssr](https://github.com/egoist/vue-no-ssr). Выражаем благодарность [@egoist](https://github.com/egoist)!
