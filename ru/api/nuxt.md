@@ -1,45 +1,46 @@
 ---
-title: "API: Nuxt(options)"
-description: You can use Nuxt.js programmatically to use it as a middleware giving you the freedom of creating your own server for rendering your web applications.
+title: "API: Nuxt(опции)"
+description: Вы можете программно использовать Nuxt.js, чтобы использовать его как middleware. Это даёт вам свободу создания своего собственного сервера для рендеринга ваших веб-приложений.
 ---
 
-# Using Nuxt.js Programmatically
+# Программное использование Nuxt.js
 
-You might want to use your own server with your middleware and your API. That's why you can use Nuxt.js programmatically.
+Возможно, вы захотите использовать свой собственный сервер с вамиши middleware и вашим API. Вот почему вы можете программно использовать Nuxt.js .
 
-You can require Nuxt.js like this:
+Вы можете импортировать Nuxt.js следующим образом:
 
 ```js
 const { Nuxt, Builder } = require('nuxt')
 ```
 
-## Nuxt Constructor
+## Nuxt конструктор
 
-To see the list of options to give to Nuxt.js, see the configuration section.
+Чтобы узнать о возможных опциях для Nuxt.js, см. раздел конфигурации.
+
 
 ```js
-// Require `Nuxt` And `Builder` modules
+// Импорт `Nuxt` и `Builder` модулей
 const { Nuxt, Builder } = require('nuxt')
 
-// Require Nuxt config
+// Импорт Nuxt опций 
 const config = require('./nuxt.config.js')
 
-// Create a new Nuxt instance
+// Создать новый экземпляр Nuxt
 const nuxt = new Nuxt(config)
 
-// Enable live build & reloading on dev
+// Включить live сборку и перезагрузить в режим разработки
 if (nuxt.options.dev) {
   new Builder(nuxt).build()
 }
 
-// We can use `nuxt.render(req, res)` or `nuxt.renderRoute(route, context)`
+// Мы можем использовать `nuxt.render(req, res)` или `nuxt.renderRoute(route, context)`
 ```
 
-You can take a look at the [nuxt-express](https://github.com/nuxt/express) and [adonuxt](https://github.com/nuxt/adonuxt) starters to get started quickly.
+Вы можете взглянуть на [nuxt-express](https://github.com/nuxt/express) и [adonuxt](https://github.com/nuxt/adonuxt) стартовые шаблоны для быстрого старта.
 
-### Debug logs
+### Debug логи
 
-If you want to display nuxt.js logs, you can add to the top of your file:
+Если вы хотите отображать nuxt.js логи, то вы можете добавить наверх вашего файла следующее выражение: 
 
 ```js
 process.env.DEBUG = 'nuxt:*'
