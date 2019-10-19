@@ -1,6 +1,6 @@
 ---
 title: Async Data
-description: You may want to fetch data and render it on the server-side. Nuxt.js adds an `asyncData` method to let you handle async operations before setting the component data.
+description: Вы можете извлечь данные и отобразить их на стороне сервера. Nuxt.js добавляет метод `asyncData`, позволяющий обрабатывать асинхронные операции Перед установкой данных компонента.
 ---
 
 > You may want to fetch data and render it on the server-side.
@@ -8,11 +8,11 @@ Nuxt.js adds an `asyncData` method to let you handle async operations before set
 
 ## The asyncData Method
 
-Sometimes you just want to fetch data and pre-render it on the server without using a store. `asyncData` is called every time before loading the component (**only for pages components**). It can be called server-side or before navigating to the corresponding route. This method receives [the context](/api/context) as the first argument, you can use it to fetch some data and Nuxt.js will merge it with the component data.
+Иногда вы просто хотите получить данные и предварительно отобразить их на сервере без использования store. `asyncData` вызывается каждый раз перед загрузкой компонента (**только для компонентов страниц**). Он может быть вызван на стороне сервера или перед переходом к соответствующему маршруту. Этот метод получает [контекст] (/api/context) в качестве первого аргумента, вы можете использовать его для извлечения некоторых данных и Nuxt.js объединит его с данными компонента.
 
-<div class="Alert Alert--orange">You do **NOT** have access of the component instance through `this` inside `asyncData` because it is called **before initiating** the component.</div>
+<div class="Alert Alert--orange">**НЕ** используйте `this` внутри `asyncData` для обращения к экземпляру компонента, потому что метод вызывается **перед инициализацией** компонента.</div>
 
-Nuxt.js offers you different ways to use `asyncData`. Choose the one you're the most familiar with:
+Nuxt.js предлагает вам различные способы использования `asyncData`. Выберите тот, с которым вы наиболее знакомы:
 
 1. Returning a `Promise`. Nuxt.js will wait for the promise to be resolved before rendering the component.
 2. Using the [async/await proposal](https://github.com/lukehoban/ecmascript-asyncawait) ([learn more about it](https://zeit.co/blog/async-and-await))
