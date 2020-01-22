@@ -1,20 +1,20 @@
 ---
-title: "API: The router Property"
-description: The router property lets you customize nuxt.js router.
+title: "API: Свойство router"
+description: Свойство router позволяет вам кастомизировать nuxt.js роутер.
 ---
 
-# The router Property
+# Свойство router
 
-> The router property lets you customize nuxt.js router ([vue-router](https://router.vuejs.org/en/)).
+> Свойство router позволяет вам кастомизировать nuxt.js роутер  ([vue-router](https://router.vuejs.org/en/)).
 
 ## base
 
-- Type: `String`
-- Default: `'/'`
+- Тип: `String`
+- По умолчанию: `'/'`
 
-The base URL of the app. For example, if the entire single page application is served under `/app/`, then base should use the value `'/app/'`.
+Базовый URL приложения. Например, если одностраничное приложение доступно через путь `/app/`, тогда основной базовый URL должет иметь вид `'/app/'`.
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 ```js
 module.exports = {
   router: {
@@ -23,17 +23,17 @@ module.exports = {
 }
 ```
 
-<p class="Alert Alert-blue">When `base` is set, nuxt.js will also add in the document header `<base href="{{ router.base }}"/>`.</p>
+<p class="Alert Alert-blue">Когда `base` указано, nuxt.js добавит на страницу так же и заголовок: `<base href="{{ router.base }}"/>`.</p>
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> Эта опция передаётся напрямую во vue-router [Router конструктор](https://router.vuejs.org/en/api/options.html).
 
 ## extendRoutes
 
-- Type: `Function`
+- Тип: `Function`
 
-You may want to extend the routes created by nuxt.js. You can do it via the `extendRoutes` option.
+Вам так же может потребоваться расширить возможности путей ('routes') созданных самим nuxt.js. Вы сможете сделать это через свойство `extendRoutes`.
 
-Example of adding a custom route:
+Пример того как добавить кастомный путь:
 
 `nuxt.config.js`
 ```js
@@ -50,16 +50,16 @@ module.exports = {
 }
 ```
 
-The schema of the route should respect the [vue-router](https://router.vuejs.org/en/) schema.
+Схема пути должна удовлетворять требованиям [vue-router](https://router.vuejs.org/en/) схемы.
 
 ## linkActiveClass
 
-- Type: `String`
-- Default: `'nuxt-link-active'`
+- Тип: `String`
+- По умолчанию: `'nuxt-link-active'`
 
-Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default active class.
+Глобально установленный по умолчанию [`<nuxt-link>`](/api/components-nuxt-link) активный класс.
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 ```js
 module.exports = {
   router: {
@@ -68,16 +68,16 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> Эта опция передаётся напрямую во [vue-router Router конструктор](https://router.vuejs.org/en/api/options.html).
 
 ## linkExactActiveClass
 
-- Type: `String`
-- Default: `'nuxt-link-exact-active'`
+- Тип: `String`
+- По умолчанию: `'nuxt-link-exact-active'`
 
-Globally configure [`<nuxt-link>`](/api/components-nuxt-link) default exact active class.
+Глобально установленный по умолчанию [`<nuxt-link>`](/api/components-nuxt-link) 'точный' активный класс.
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 ```js
 module.exports = {
   router: {
@@ -86,22 +86,22 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the [vue-router Router constructor](https://router.vuejs.org/en/api/options.html).
+> Эта опция передаётся напрямую во [vue-router Router конструктор](https://router.vuejs.org/en/api/options.html).
 
 ## middleware
 
-- Type: `String` or `Array`
-  - Items: `String`
+- Тип: `String` или `Array`
+- Элементы: `String`
 
-Set the default(s) middleware for every pages of the application.
+Устанавливает middleware по умолчанию для каждой из страниц приложения.
 
-Example:
+Пример:
 
 `nuxt.config.js`
 ```js
 module.exports = {
   router: {
-    // Run the middleware/user-agent.js on every pages
+    // Запускает middleware/user-agent.js на каждой странице
     middleware: 'user-agent'
   }
 }
@@ -110,21 +110,21 @@ module.exports = {
 `middleware/user-agent.js`
 ```js
 export default function (context) {
-  // Add the userAgent property in the context (available in `data` and `fetch`)
+  // Добавляет свойство userAgent в контекст (доступно в `data` и `fetch` разделах компонента)
   context.userAgent = context.isServer ? context.req.headers['user-agent'] : navigator.userAgent
 }
 ```
 
-To learn more about the middleware, see the [middleware guide](/guide/routing#middleware).
+Узнать больше о middleware вы можете на странице: [Гайд по middleware](/guide/routing#middleware).
 
 ## mode
 
-- Type: `String`
-- Default: `'history'`
+- Тип: `String`
+- По умолчанию: `'history'`
 
-Configure the router mode, this is not recommended to change it due to server-side rendering.
+Настроить режим роутера, не рекомендуется менять в режиме SSR (рендеринга на стороне сервера).
 
-Example (`nuxt.config.js`):
+Пример (`nuxt.config.js`):
 ```js
 module.exports = {
   router: {
@@ -133,43 +133,43 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> Эта опция передаётся напрямую во vue-router [Конструктор Router](https://router.vuejs.org/en/api/options.html).
 
 ## scrollBehavior
 
-- Type: `Function`
+- Тип: `Function`
 
-The `scrollBehavior` option lets you define a custom behavior for the scroll position between the routes. This method is called every time a page is rendered.
+Свойство `scrollBehavior` позволяет вам определять кастомное поведение для положения скролла, при переходе между путями (routes). Этот метод вызывается каждый раз при рендеринге каждой страницы.
 
-By default, the scrollBehavior option is set to:
+По умолчнию, свойство scrollBehavior установлено как:
 
 ```js
 const scrollBehavior = function (to, from, savedPosition) {
-  // if the returned position is falsy or an empty object,
-  // will retain current scroll position.
+  // Если возвращаемая позиция это пустой или нечитаемый объект,
+  // будет сохранять текущую позицию.
   let position = false
 
-  // if no children detected
+  // если дочерних элементов не найдено.
   if (to.matched.length < 2) {
-    // scroll to the top of the page
+    // Скроллировать наверх страницы
     position = { x: 0, y: 0 }
   } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
-    // if one of the children has scrollToTop option set to true
+    // если кто то из дочерних элементов имеет свойство scrollToTop установленное как true
     position = { x: 0, y: 0 }
   }
 
-  // savedPosition is only available for popstate navigations (back button)
+  // savedPosition доступно только для события popstate навигации (событие изменяющее активную запись истории переходов браузера) (кнопка назад например)
   if (savedPosition) {
     position = savedPosition
   }
 
   return new Promise(resolve => {
-    // wait for the out transition to complete (if necessary)
+    // ожидает когда анимация выхода завершится (если необходимо)
     window.$nuxt.$once('triggerScroll', () => {
-      // coords will be used if no selector is provided,
-      // or if the selector didn't match any element.
+      // будет использовано если не передавалось ни одного селектора,
+      // или если по селектору не находится ни одного элемента.
       if (to.hash && document.querySelector(to.hash)) {
-        // scroll to anchor by returning the selector
+        // скролл к якорю возвращая селектор
         position = { selector: to.hash }
       }
       resolve(position)
@@ -178,7 +178,7 @@ const scrollBehavior = function (to, from, savedPosition) {
 }
 ```
 
-Example of forcing the scroll position to the top for every routes:
+Пример принудительной установки позиции скролла на самый верх страницы:
 
 `nuxt.config.js`
 ```js
@@ -191,4 +191,4 @@ module.exports = {
 }
 ```
 
-> This option is given directly to the vue-router [Router constructor](https://router.vuejs.org/en/api/options.html).
+> Эта опция передаётся напрямую во vue-router [Router конструктор](https://router.vuejs.org/en/api/options.html).
